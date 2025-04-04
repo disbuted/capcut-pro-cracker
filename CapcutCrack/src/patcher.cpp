@@ -148,7 +148,7 @@ void createToggledDllFiles(const fs::path& dllPath, const std::vector<char>& ori
         { '\x00','f','u','c','k','_','p','e','o','p','l','e','\x00' });
 
     binaryReplace(offContent, { '\x00','v','i','p','_','p','o','r','n','h','u','b','\x00' }, // for the memes @humbleness
-        { '\x00','f','u','c','k','_','s','k','i','d','d','s','\x00' });
+        { '\x00','f','u','c','k','_','s','k','i','d','s','\x00' });
 
     saveEditedFile(dllPath.string() + "_On.dll", onContent);
     saveEditedFile(dllPath.string() + "_Off.dll", offContent);

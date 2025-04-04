@@ -202,7 +202,7 @@ void checkAdmin() {
 int main() {
     checkAdmin(); // checks its being ran as admin for this to work
     system("mode con cols=117 lines=28"); // console sizing
-    SetConsoleTitleA("Capcut Premium Cracker <> github.com/disbuted");; 
+    SetConsoleTitleA("Capcut Premium Patcher <> github.com/disbuted");; 
 
     const std::wstring programName = L"CapCut.exe";
     std::string toggle;
@@ -221,7 +221,7 @@ $$    $$/ $$    $$ |$$    $$/ $$       |$$    $$/   $$  $$/
                     $$ |                                    
                     $$/                                     
 ---------------------------------------------------------------------------------
-              CapCut Premium Cracker by Disbuted (github.com/disbuted)          
+              CapCut Premium Patcher by Disbuted (github.com/disbuted)          
                    Type "on" or "off" to toggle premium features              
     )"); 
 

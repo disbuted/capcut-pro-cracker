@@ -1,4 +1,4 @@
-﻿// posting this on github to show the "LGTBQ++ Supporters<3" groupchat it works
+// posting this on github to show the "LGTBQ++ Supporters<3" groupchat it works
 // posting this on github to show the "LGTBQ++ Supporters<3" groupchat it works
 // posting this on github to show the "LGTBQ++ Supporters<3" groupchat it works
 // posting this on github to show the "LGTBQ++ Supporters<3" groupchat it works
@@ -46,7 +46,7 @@ std::string currentTime() {
     std::tm* local = std::localtime(&timeNow);
 
     std::ostringstream oss;
-    oss << std::put_time(local, "%H:%M:%S");
+    oss << std::put_time(local, "%H:%M:%S"); // simple time logging 
     return oss.str();
 }
 
@@ -133,7 +133,9 @@ void binaryReplace(std::vector<char>& data, const std::vector<char>& from, const
 void saveEditedFile(const fs::path& path, const std::vector<char>& content) {
     std::ofstream out(path, std::ios::binary);
     if (!out) {
+        setColor(FOREGROUND_RED);
         throw std::runtime_error("[" + currentTime() + "] Failed to write: " + path.string());
+        resetColor();
     }
     out.write(content.data(), content.size());
 }
@@ -142,10 +144,10 @@ void createToggledDllFiles(const fs::path& dllPath, const std::vector<char>& ori
     std::vector<char> onContent = originalContent;
     std::vector<char> offContent = originalContent;
 
-    binaryReplace(onContent, { '\x00','v','i','p','_','p','o','r','n','h','u','b','\x00' },
+    binaryReplace(onContent, { '\x00','v','i','p','_','p','o','r','n','h','u','b','\x00' },  // for the memes @humbleness
         { '\x00','f','u','c','k','_','p','e','o','p','l','e','\x00' });
 
-    binaryReplace(offContent, { '\x00','v','i','p','_','p','o','r','n','h','u','b','\x00' },
+    binaryReplace(offContent, { '\x00','v','i','p','_','p','o','r','n','h','u','b','\x00' }, // for the memes @humbleness
         { '\x00','f','u','c','k','_','s','k','i','d','d','s','\x00' });
 
     saveEditedFile(dllPath.string() + "_On.dll", onContent);
@@ -198,8 +200,8 @@ void checkAdmin() {
 }
 
 int main() {
-    checkAdmin();
-    system("mode con cols=117 lines=28");
+    checkAdmin(); // checks its being ran as admin for this to work
+    system("mode con cols=117 lines=28"); // console sizing
     SetConsoleTitleA("Capcut Premium Cracker <> github.com/disbuted");; 
 
     const std::wstring programName = L"CapCut.exe";
@@ -230,10 +232,10 @@ $$    $$/ $$    $$ |$$    $$/ $$       |$$    $$/   $$  $$/
 
     if (!pids.empty()) {
         for (DWORD pid : pids) {
-            fs::path exePath = getExePathFromPid(pid);
+            fs::path exePath = getExePathFromPid(pid); // C:\Users\PCUSERNAME\AppData\Local\CapCut\Apps\5.9.1.2256 (at the time of coding this)
             fs::path folder = exePath.parent_path();
-            fs::path dll = folder / "VECreator.dll";
-            fs::path watermark = folder / "Resources" / "watermark";
+            fs::path dll = folder / "VECreator.dll"; // the .dll for the prem
+            fs::path watermark = folder / "Resources" / "watermark"; // fuck the watermark bro on god
 
             if (fs::exists(dll)) dllPaths.insert(dll);
 
